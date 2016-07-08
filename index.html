@@ -59,7 +59,7 @@
                     </div>
 
 
-                    <button class="btn btn-primary btn-lg center-block" onclick="saveContact()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Save</button>
+                    <button class="btn btn-primary btn-lg center-block" type="button" onclick="saveContact()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Save</button>
                     <br>
                     <div id="result" class="text-center small"></div>
 
@@ -91,7 +91,7 @@
         var btnIndex;
 
         
-        var validate = function () {
+        var validate = function() {
             if ($('#firstname').val() != '' && $('#lastname').val() != '' && $('#number').val() != '') {
                 $('#result').text('Contact Saved Succesfully');
                 $('#result').removeClass('text-danger').addClass('text-success');
@@ -101,10 +101,10 @@
                 $('#result').removeClass('text-success').addClass('text-danger');
                 return false;
             };
-        }
+        };
 
 
-        var addContact = function () {
+        var addContact = function() {
             var contact = {
                 firstname: '',
                 lastname: '',
@@ -114,10 +114,10 @@
             contact.lastname = $('#lastname').val();
             contact.number = $('#number').val();
             phoneList.push(contact);
-        }
+        };
 
 
-        var viewContacts = function () {
+        var viewContacts = function() {
             if (phoneList.length === 0) {
                 $('#display').html('<span class="small">There are no contact. Please add a new one.</span>')
             } else {
@@ -126,16 +126,16 @@
             for (i = 0; i < phoneList.length; i++) {
                 $('#display').append('<div>Name: <strong>' + phoneList[i].firstname + ' ' + phoneList[i].lastname + '</strong>, Phone: <strong><em>' + phoneList[i].number + '</em></strong><button class="btn btn-danger btn-xs pull-right">Delete</button></div><br>');
             };
-        }
+        };
 
         
-        var saveContact = function () {
+        var saveContact = function() {
             if (validate()) {
                 addContact();
                 $('.form-group').find('input').val('');
                 viewContacts();
             };
-        }
+        };
 
 
         $('#display').on('click', "button", function () {
