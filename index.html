@@ -93,12 +93,10 @@
         
         var validate = function() {
             if ($('#firstname').val() != '' && $('#lastname').val() != '' && $('#number').val() != '') {
-                $('#result').text('Contact Saved Succesfully');
-                $('#result').removeClass('text-danger').addClass('text-success');
+                $('#result').text('Contact Saved Succesfully').removeClass('text-danger').addClass('text-success');
                 return true;
             } else {
-                $('#result').text('Please fill all required fields');
-                $('#result').removeClass('text-success').addClass('text-danger');
+                $('#result').text('Please fill all required fields').removeClass('text-success').addClass('text-danger');
                 return false;
             };
         };
